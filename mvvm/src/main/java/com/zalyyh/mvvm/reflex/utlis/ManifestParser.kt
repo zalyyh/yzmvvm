@@ -3,11 +3,19 @@ package com.zalyyh.mvvm.reflex.utlis
 import android.content.Context
 import android.content.pm.PackageManager
 import com.zalyyh.mvvm.reflex.interfaces.ConfigModule
-
+/**
+ * ================================================
+ * 用于解析 AndroidManifest 中的 Meta 属性
+ * 配合 {@link ConfigModule} 使用
+ * ================================================
+ */
 class ManifestParser (context:Context) {
+    /**
+     * meta-data 配置需要的value
+     * */
     val MODULE_VALUE:String = "ConfigModule"
     var context:Context = context;
-
+    //获取配置文件里的配置方法
     fun parse():List<ConfigModule>{
 
        var modules = ArrayList<ConfigModule>()

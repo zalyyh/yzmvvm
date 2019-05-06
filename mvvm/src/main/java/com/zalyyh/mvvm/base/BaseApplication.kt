@@ -26,6 +26,8 @@ class BaseApplication : Application() {
     // 程序创建的时候执行
     override fun onCreate() {
         super.onCreate()
+        if (mAppDelegate != null)
+            this.mAppDelegate!!.onCreate(this)
     }
 
     /**
@@ -34,6 +36,8 @@ class BaseApplication : Application() {
      * */
     override fun onLowMemory() {
         super.onLowMemory()
+        if (mAppDelegate != null)
+            this.mAppDelegate!!.onLowMemory(this)
     }
 
     /**
@@ -43,6 +47,8 @@ class BaseApplication : Application() {
      * */
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
+        if (mAppDelegate != null)
+            this.mAppDelegate!!.onLowMemory(this)
     }
     
 
